@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,9 @@
           theme: {
             extend: {
               colors: {
-                clifford: '#da373d',
+                  primary: 'rgba(17, 17, 17, 1)',
+                  secondary: "rgba(17, 17, 17, 0.7)",
+                  accent:"rgb(180, 244, 97)"
               },
               fontFamily: {
                 lexend: `"Lexend", system-ui;`,
@@ -31,12 +33,41 @@
             }
           }
         }
-      </script>
+    </script>
 
 </head>
-<body class="font-lexend">
-    <h1>Hello World</h1>
-    
+<body class="font-lexend relative">
+    <header class="backdrop-blur-sm bg-white/30 px-4 md:px-16 py-6 fixed top-0 left-0 right-0 border-b-2 ">
+
+        <!-- Nagivation Section Start -->
+        <nav class="flex justify-between items-center md:text-xl ">
+            <!-- Nav button -->
+            <button id="nav_blog_button" class="btn font-semibold px-10 bg-accent hover:bg-lime-400">Blog</button>
+
+            <!-- Nav Logo -->
+            <div class="flex justify-center items-center gap-4 ">
+                <p><img src="./assets/logo.png" alt="Donate log"></p>
+                <h2 class="text-secondary hidden md:block">Donate Bangladesh</h2>
+            </div>
+
+            <!-- Nav Initial Account -->
+            <div class="flex justify-center items-center gap-4">
+                <img src="./assets/coin.png" alt="Dollar Coin Icon">
+                <h2 class="font-medium text-secondary">5500 BDT</h2>
+            </div>
+        </nav>
+        <!-- Nagivation Section Start -->
+
+         <!-- Hero Button Section Start  -->
+          <div class="flex justify-center items-center gap-4 mt-10 md:mt-16 text-xl font-semibold">
+            <button class="btn px-10 bg-accent hover:bg-lime-400">Donate</button>
+            <button class="btn px-10 text-secondary bg-transparent border-2">History</button>
+          </div>
+         <!-- Hero Button Section End  -->
+
+    </header>
+
+    <main class="max-w-[1140px] h-[1234px] mx-auto mt-64 pt-10"></main>
 
     <script src="./js/utility.js"></script>
     <script src="./js/index.js"></script>
