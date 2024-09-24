@@ -1,7 +1,8 @@
 
 //For enter the blog page
 $("nav_blog_button").addEventListener("click", function () {
-    window.location.href = "./blog.html"
+    // window.location.href = "./blog.html"
+    window.location.replace("./blog.html")
 })
 
 
