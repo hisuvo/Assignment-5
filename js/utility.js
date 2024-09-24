@@ -29,3 +29,11 @@ function $empty(id) {
     return document.getElementById(id).value = "";
 }
 
+// Showed only Click section
+function $show(id) {
+    document.getElementById("donate_section").classList.add("hidden")
+    document.getElementById("history_card_section").classList.add("hidden")
+
+    // only show 
+    document.getElementById(id).classList.remove("hidden")
+}

@@ -1,5 +1,37 @@
-// Initaial account balance access
 
+//For enter the blog page
+$("nav_blog_button").addEventListener("click", function () {
+    window.location.href = "./blog.html"
+})
+
+
+// Hero donate and history button visualize
+// notice donate button
+$("nav_history_button").addEventListener("click", function (e) {
+    $show("history_card_section")
+
+    e.target.classList.add("text-primary","bg-accent","hover:bg-lime-400")
+    e.target.classList.remove("text-secondary")
+    
+    $("nav_donate_button").classList.remove("text-primary","bg-accent","hover:bg-lime-400")
+    $("nav_donate_button").classList.add("text-secondary")
+    
+})
+
+//notice history button
+$("nav_donate_button").addEventListener("click", function (e) {
+    $show("donate_section")
+
+    e.target.classList.add("text-primary","bg-accent","hover:bg-lime-400")
+    e.target.classList.remove("text-secondary")
+    
+    $("nav_history_button").classList.remove("text-primary","bg-accent","hover:bg-lime-400")
+    $("nav_history_button").classList.add("text-secondary")
+})
+
+
+
+// Initaial account balance access
 const initialAccountBalance =$txtNumber("initial_account_balance");
 let ownerBalance = initialAccountBalance;
 
@@ -13,12 +45,12 @@ $("noakhali_donate_button").addEventListener("click", function() {
     const inputDonateNoakhali = $vluNumber("noakhali_input_balance");
 
     if(isNaN(inputDonateNoakhali) || inputDonateNoakhali <= 0) {
-        alert("Worng information input")
+        alert("Invalid Input")
         return;
     }
 
     if(ownerBalance < inputDonateNoakhali) {  
-        alert("balance is low")
+        alert("Balance is low")
         return;
     }
 
@@ -37,11 +69,12 @@ $("noakhali_donate_button").addEventListener("click", function() {
     const div = document.createElement("div")
     div.innerHTML= `
         <div class="space-y-2 md:space-y-4 p-8 border rounded bg-slate-50">
-            <h3 class="text-base md:text-xl text-primary font-bold">${inputDonateNoakhali} Taka is Donated for famine-2024 at Nokali, Bangladesh</h3>
+            <h3 class="text-base md:text-xl text-primary font-bold">${inputDonateNoakhali} Taka is Donated for famine-2024 at Nokali Flood, Bangladesh</h3>
             <p class="text-sm md:text-base font-light text-secondary">Date : ${new Date()}</p>
         </div>
     `
-    $("history_card_section").appendChild(div);
+    // $("history_card_section").appendChild(div);
+    $("history_card_section").prepend(div);
 
     //Display input valuse empty
     $empty("noakhali_input_balance")
@@ -61,12 +94,12 @@ $("feni_donate_button").addEventListener("click", function() {
     const inputDonateFeni = $vluNumber("feni_input_balance");
 
     if(isNaN(inputDonateFeni) || inputDonateFeni <=0){
-        alert("Invalid Amount");
+        alert("Invalid Input");
         return;
     }
 
     if(ownerBalance < inputDonateFeni) {
-        alert("Balance is Low");
+        alert("Balance is low");
         return;
     }
 
@@ -75,6 +108,17 @@ $("feni_donate_button").addEventListener("click", function() {
 
     // Update owner Account balance
     ownerBalance = ownerBalance - inputDonateFeni;
+
+    // Donation add to history
+    const div = document.createElement("div")
+    div.innerHTML= `
+        <div class="space-y-2 md:space-y-4 p-8 border rounded bg-slate-50">
+            <h3 class="text-base md:text-xl text-primary font-bold">${inputDonateFeni} Taka is Donated for famine-2024 at Feni Flood, Bangladesh</h3>
+            <p class="text-sm md:text-base font-light text-secondary">Date : ${new Date()}</p>
+        </div>
+    `
+    // $("history_card_section").appendChild(div);
+    $("history_card_section").prepend(div);
 
     // Display 
     $("feni_acount").innerHTML = feniBalance;
@@ -102,7 +146,7 @@ $("quota_movement_donate_button").addEventListener("click", function () {
     }
 
     if(ownerBalance < inputDonateQuota) {
-        alert("Blanace is Low")
+        alert("Blanace is low")
         return;
     }
 
@@ -111,6 +155,17 @@ $("quota_movement_donate_button").addEventListener("click", function () {
 
     // Update quota Account Balance
     quotabalance  = quotabalance + inputDonateQuota;
+
+    // Donation add to history
+    const div = document.createElement("div")
+    div.innerHTML= `
+        <div class="space-y-2 md:space-y-4 p-8 border rounded bg-slate-50">
+            <h3 class="text-base md:text-xl text-primary font-bold">${inputDonateQuota} Taka is Donated for famine-2024 at Quote Movement, Bangladesh</h3>
+            <p class="text-sm md:text-base font-light text-secondary">Date : ${new Date()}</p>
+        </div>
+    `
+    // $("history_card_section").appendChild(div);
+    $("history_card_section").prepend(div);
 
     // display update account balance
     $("initial_account_balance").innerHTML = ownerBalance;
@@ -124,8 +179,3 @@ $("quota_movement_donate_button").addEventListener("click", function () {
 })
 
 
-
-$("nav_blog_button").addEventListener("click", function () {
-    // window.location.replace("/blog.html")
-    window.location.href = "/blog.html"
-})

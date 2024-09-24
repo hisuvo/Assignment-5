@@ -51,15 +51,15 @@
             <!-- Nav Initial Account -->
             <div class="flex justify-center items-center gap-4">
                 <img src="./assets/coin.png" alt="Dollar Coin Icon">
-                <p class="font-medium text-secondary"> <span id="initial_account_balance">5500</span>BDT</p>
+                <p class="font-medium text-secondary"> <span id="initial_account_balance">5500</span> BDT</p>
             </div>
         </nav>
         <!-- Nagivation Section Start -->
 
          <!-- Hero Button Section Start  -->
         <div class="container mx-auto px-4 md:px-16 flex justify-center items-center gap-4 my-4 md:mt-8 lg:mt-12 md:mb-6 text-xl font-semibold">
-            <button class="btn px-10 bg-accent hover:bg-lime-400">Donate</button>
-            <button class="btn px-10 text-secondary">History</button>
+            <button id="nav_donate_button" class="btn px-10 text-primary bg-accent hover:bg-lime-400">Donate</button>
+            <button id="nav_history_button" class="btn px-10 text-secondary">History</button>
         </div>
          <!-- Hero Button Section End  -->
 
@@ -143,14 +143,13 @@
         <!-- Donate Section End -->
 
         <!-- History Section Start -->
-        <section id="history_card_section" class="space-y-2 md:space-y-6 pb-10">
+        <section id="history_card_section" class="hidden space-y-2 md:space-y-6 pb-10">
             <!-- here will be add Donate history -->
          </section>
         <!-- History Section End -->
     </main>
 
     <!-- Modal Section start here -->
-    <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
     <dialog id="my_modal_1" class="modal">
       <div class="modal-box flex flex-col justify-center items-center">
         <h2 class="text-3xl text-primary font-bold">Congrates</h2>
